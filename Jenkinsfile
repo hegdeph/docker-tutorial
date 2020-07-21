@@ -2,6 +2,7 @@ pipeline{
     
     agent any
 
+	stages{
 	stage('Static Code analysis') {
        
         environment {
@@ -16,4 +17,5 @@ pipeline{
 
         }
     } 
+	}
 }
