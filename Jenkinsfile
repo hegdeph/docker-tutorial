@@ -12,7 +12,7 @@ pipeline{
         steps {
 
             withSonarQubeEnv('Sonarqube-server') {
-                sh "${scannerHome}/bin/sonar-scanner -Dsonar.login='1b460da1a67ec5961f38bd92baed13b957b1252f' -Dsonar.projectKey=f2ride-web -Dsonar.sources='./*'"
+                sh "${scannerHome}/bin/sonar-scanner -Dsonar.login='1b460da1a67ec5961f38bd92baed13b957b1252f' -Dsonar.projectKey=f2ride-web -Dsonar.sources='.'"
             }
 
         }
