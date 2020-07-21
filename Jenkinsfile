@@ -17,7 +17,7 @@ pipeline{
        stage('Build image') {
 		steps{
 			script {
-			dockerImage = docker.build ('nodeapp')
+			dockerImage = docker.build ('f2ride-dev/nodeapp')
 			}
      	 }
    		}
@@ -25,8 +25,8 @@ pipeline{
 		stage('Deploy Image') {
 		steps{
 			script {
-			docker.withRegistry( 'https://424377644605.dkr.ecr.eu-west-2.amazonaws.com/f2ride-dev', 'ecr:eu-west-2:prasanna-dev-ecr' ) {
-				docker.image('nodeapp').push('latest')
+			docker.withRegistry( 'https://424377644605.dkr.ecr.eu-west-2.amazonaws.com', 'ecr:eu-west-2:prasanna-dev-ecr' ) {
+				docker.image('f2ride-dev/nodeapp').push('latest')
 			}
 			}
 		}
