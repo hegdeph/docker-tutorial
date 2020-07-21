@@ -25,7 +25,7 @@ pipeline{
 		stage('Deploy Image') {
 		steps{
 			script {
-			docker.withRegistry( '', 'ecr:eu-west-2:prasanna-dev-ecr' ) {
+			docker.withRegistry( registry, 'ecr:eu-west-2:prasanna-dev-ecr' ) {
 				dockerImage.push()
 			}
 			}
