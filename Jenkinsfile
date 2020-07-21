@@ -7,7 +7,7 @@ pipeline{
 		dockerImage = ''
   	}
    
-    stages {
+    stages { 
 
 		stage('Static Code analysis') {
        
