@@ -30,7 +30,7 @@ stage("Quality Gate") {
 
         steps {
           timeout(time: 2, unit: 'MINUTES') {
-            waitForQualityGate(webhookSecretId: '1234') 
+            waitForQualityGate abortPipeline: true
           }
         }
     }
