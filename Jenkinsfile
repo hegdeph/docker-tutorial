@@ -18,7 +18,7 @@ pipeline{
 			steps {
 
 				withSonarQubeEnv('Sonarqube-server') {
-					sh "${scannerHome}/bin/sonar-scanner -Dsonar.login='1b460da1a67ec5961f38bd92baed13b957b1252f' -Dsonar.projectKey=f2ride-web -Dsonar.sources='.'"
+					sh "${scannerHome}/bin/sonar-scanner -Dsonar.login='7e19dab3495025af989d6cad00d0fdc166e734b9' -Dsonar.projectKey=f2ride-web -Dsonar.sources='.'"
 				}
 
 			}
@@ -30,7 +30,7 @@ stage("Quality Gate") {
 
         steps {
           timeout(time: 2, unit: 'MINUTES') {
-            waitForQualityGate abortPipeline: true
+            waitForQualityGate(webhookSecretId: '1234') 
           }
         }
     }
